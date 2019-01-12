@@ -5,6 +5,7 @@ ruby '2.2.10'
 
 gem 'mongoid', '~> 6.1.0'
 gem 'rack-cors'
+gem 'rack-attack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
