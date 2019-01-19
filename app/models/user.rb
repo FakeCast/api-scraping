@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
+# Class User
 class User
   include Mongoid::Document
-  acts_as_token_authenticatable
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,7 +11,11 @@ class User
   ## Database authenticatable
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
-  #field :authentication_token, type: String, default: ""
+
+  has_many :quotes
+  ## Token Authenticatable
+  acts_as_token_authenticatable
+  field :authentication_token
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -18,9 +23,6 @@ class User
 
   ## Rememberable
   field :remember_created_at, type: Time
-
-  has_many :quotes, dependent: :destroy
-  
 
   ## Trackable
   # field :sign_in_count,      type: Integer, default: 0

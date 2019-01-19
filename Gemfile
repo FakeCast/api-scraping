@@ -1,14 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.2.10'
-
-gem 'mongoid', '~> 6.1.0'
-gem 'rack-cors'
-gem 'rack-attack'
-gem 'devise'
-gem 'simple_token_authentication', '~> 1.0'
-gem 'byebug'
+ruby '2.6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
@@ -21,6 +14,14 @@ gem 'puma', '~> 3.11'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# MongoD
+gem 'mongoid'
+
+# Simple authentication Token
+gem 'simple_token_authentication', '~> 1.0'
+
+# Devise
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
